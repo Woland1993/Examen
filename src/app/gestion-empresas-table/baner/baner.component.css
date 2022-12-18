@@ -1,0 +1,29 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .color_texto { color: #f8f3f3; }
+
+  div.centrado{
+    position: relative;
+  }
+  .bar{
+    background: rgb(115,13,237);
+background: linear-gradient(90deg, rgba(115,13,237,1) 0%, rgba(1,166,219,0.9215248599439776) 71%, rgba(0,13,255,0) 100%);
+
+}
+
+.boton{
+  background: rgb(115,13,237);
+  background: linear-gradient(90deg, rgba(115,13,237,1) 8%, rgba(16,1,219,0.9019170168067226) 25%, rgb(0, 140, 255) 100%);
+}
+
+button.centrado {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

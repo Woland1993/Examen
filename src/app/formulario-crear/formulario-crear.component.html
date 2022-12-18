@@ -1,0 +1,64 @@
+<p-card >
+    <form [formGroup]="EmpresaForm" (ngSubmit)="editEmpresa()">
+    <div class="grid bar">
+    
+    <div class="col-6 color_texto">
+            <h1 class="-mb-1 -mt-1">Crear Empresa</h1>
+            <small id="username2-help" > Crea una nueva empresa</small>
+
+    </div>
+    <div class="col-2 centrado">
+             
+    </div>
+    <div class="col-2 centrado">
+        <button pButton pRipple type="button" label="Cancelar" class="p-button-rounded boton  centrado" (click)="home()"></button>     
+    </div>
+    <div class="col-2 centrado">
+        <button pButton pRipple type="submit" [disabled]="EmpresaForm.invalid" label="Guardar" class="p-button-rounded boton centrado"></button>     
+    </div>
+</div>
+    <div class="p-fluid grid">
+        <div class="col-6">
+        <h5>Nombre Comercial</h5>
+            <input type="text" id="nombre-comercial" type="username" aria-describedby="nombre-comercial-help" pInputText  class=" col-12  ng-dirty border-3 border-indigo-400 " formControlName="nombreComercial">
+            <small id="nombre-comercial-help" *ngIf="EmpresaForm.get('nombreComercial')?.invalid" class="p-error block">Ingrese un Nombre</small>
+        </div>
+    <div class="col-6">
+        <h5>Razon Social</h5>
+            <input type="text" id="razon-social" type="username" aria-describedby="razon-social-help" pInputText  class=" col-12 ng-dirty border-3 border-indigo-400" formControlName="razonSocial">
+            <small id="razon-social-help" *ngIf="EmpresaForm.get('razonSocial')?.invalid" class="p-error block">Ingrese Razon Social</small>
+    </div>   
+    <div class="col-6">
+        <h5>Telefono</h5>
+            <input type=""   pInputText id="telefono" aria-describedby="telefono-help"  class="  col-12 ng-dirty border-3 border-indigo-400" formControlName="telefono">
+            <small id="telefono-help" *ngIf="EmpresaForm.get('telefono')?.invalid" class="p-error block">Ingrese un telefono de 8 caracteres numericos</small>
+        </div>
+    <div class="col-6">
+        <h5>Correo Electronico</h5>
+            <input type="text" id="correo" pInputText aria-describedby="email-help"  pInputText  class=" col-12 ng-dirty border-3 border-indigo-400" formControlName="correo">
+            <small id="email-help" *ngIf="EmpresaForm.get('correo')?.invalid"  class="p-error">Ingrese Correo Electronico valido</small>
+    </div> 
+    <div class="col-6">
+        <h5>NIT</h5>
+            <input type="text" id="NIT" pInputText aria-describedby="nit-help" class=" col-12 p-invalid ng-dirty border-3 border-indigo-400 " formControlName="nit">
+            <small id="nit-help" *ngIf="EmpresaForm.get('nit')?.invalid"  class="p-error">Ingrese NIT con formato de 5 caracteres numericos mas "-" mas 1 caracter numerico</small>
+        </div>
+    <div class="col-6">
+        <h5>Estado</h5>
+            <input type="text" id="estado" aria-describedby="estado-help" pInputText  class=" col-12  ng-dirty border-3 border-indigo-400" formControlName="estado">
+            <small  id="estado-help" *ngIf="EmpresaForm.get('estado')?.invalid" class="p-error">Ingrese estado "activo" o "inactivo"</small>
+    </div>  
+    <div class=" col-12">
+        <h5>Direccion</h5>
+            <input type="text"
+             id="direccion" 
+             aria-describedby="direccion-help"   
+             class=" col-12  ng-dirty border-3 border-indigo-400"
+              pInputText formControlName="direccion"
+              >
+            <small  id="direccion-help" *ngIf="EmpresaForm.get('direccion')?.invalid" class="p-error">Ingrese direccion</small>
+    </div>
+    </div>
+</form>
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+</p-card>

@@ -1,0 +1,29 @@
+<p-table [columns]="cols" [value]="empresas" [tableStyle]="{'min-width': '50rem'}"
+ [rowHover]="true" dataKey="id">
+    <ng-template pTemplate="header" let-columns >
+        <tr >
+            <th *ngFor="let col of columns" >
+                {{col.header}}
+            </th>
+            <th >
+                Opciones
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-empresa>
+        <tr >
+            <td *ngFor="let col of cols;"  >
+                {{rowData[col.field]}}                
+            </td>
+                <td >
+                    <div class="grid">
+                    <i class="pi pi-file-edit col-2 "(click)="editarEmpresa(empresa)"></i>
+                    <div class="col-1"></div>
+                    <i class="pi pi-trash col-2" (click)="eliminarEmpresa(empresa)"></i>
+                    <div class="col-9"></div>
+                </div>
+                </td>
+        </tr>
+    </ng-template>
+</p-table>
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
